@@ -1,5 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { incrementCount } from "./counterSlice"; // import the action creator
+
 
 function Counter() {
   // read from the Redux store
@@ -9,8 +11,7 @@ function Counter() {
   const dispatch = useDispatch();
 
   function handleOnClick() {
-    // dispatching an action on click
-    dispatch({ type: "count/increment" });
+    dispatch(incrementCount()); // dispatch the action created by incrementCount()
   }
 
   return (
